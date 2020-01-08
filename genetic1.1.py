@@ -55,9 +55,6 @@ class genesis:
              if (self.phrase[i] == ind[i]):
                  fitness += 1
         return fitness
-    def sort(self,pop):
-        pop.sort(key=self.measure,reverse=True)
-        return pop
     def mate(self,ind1,ind2):
         #Mutation: pick a number 0-99. If mutation is less than that number, add a random character to baby
         #Genetic Breeding: If no mutation, randomly choose one of the parents characters
