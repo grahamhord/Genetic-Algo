@@ -30,12 +30,12 @@ class genesis:
         if popsize < 2 or survivors < 2 or top < 2:
             raise ValueError('popsize, survivors, and top must all be greater than 1.'
                              f'\npopsize = {popsize} \nsurvivors = {survivors} \ntop = {top}')
-        if popsize % 2 > 0:
-            popsize -= 1
-        if survivors % 2 > 0:
-            survivors -= 1
-        if top % 2 > 0:
-            top -= 1
+
+        # Make sizes all even
+        popsize -= popsize % 2
+        survivors -= survivors % 2
+        top -= top % 2
+
         # Define terms
         self.popsize = int(popsize)
         self.mutation = int(mutation)
