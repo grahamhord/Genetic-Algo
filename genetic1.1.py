@@ -46,9 +46,7 @@ class genesis:
         # Create a population in self.lst
         self.lst = list()
         while len(self.lst) < self.popsize:
-            ind = ''
-            while len(ind) < self.length:
-                ind += random.choice(characters)
+            ind = ''.join([random.choice(characters) for _ in range(self.length)])
             self.lst.append(ind)
         self.lst.sort(key=self.measure, reverse=True)
         self.run()
