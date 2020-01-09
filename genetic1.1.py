@@ -36,6 +36,7 @@ class genesis:
         self.top = int(top)
         self.phrase = target
         self.length = len(target)
+
         # Create a population in self.lst
         self.lst = list()
         while len(self.lst) < self.popsize:
@@ -132,6 +133,7 @@ class genesis:
         self.best = best
         self.median = median
         self.worst = worst
+
         # Plot performance
         plt.plot(best, label='best')
         plt.plot(median, label='median')
