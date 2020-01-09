@@ -22,9 +22,11 @@ class genesis:
                              f'\npopsize = {popsize} \nsurvivors = {survivors} \ntop = {top}')
         if not target:
             raise ValueError('No target provided')
-        for i in range(len(target)):
-            if target[i] not in characters:
-                raise ValueError(f'Invalid Character: {target[i]}')
+
+        invalids = set(target) - set(characters)
+        if invalids:
+            raise ValueError(f'Invalid Characters: {invalids}')
+
         if popsize < 2 or survivors < 2 or top < 2:
             raise ValueError('popsize, survivors, and top must all be greater than 1.'
                              f'\npopsize = {popsize} \nsurvivors = {survivors} \ntop = {top}')
